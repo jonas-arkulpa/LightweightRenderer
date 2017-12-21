@@ -584,25 +584,25 @@ main(int argc, char *argv[])
     }
 
     if (argc >= 8) {
-        camx = atoi(argv[5]);
-        camy = atoi(argv[6]);
-        camz = atoi(argv[7]);
+        camx = atof(argv[5]);
+        camy = atof(argv[6]);
+        camz = atof(argv[7]);
     }
-
+    
     if (argc >= 11) {
-        centerx = atoi(argv[8]);
-        centery = atoi(argv[9]);
-        centerz = atoi(argv[10]);
+        centerx = atof(argv[8]);
+        centery = atof(argv[9]);
+        centerz = atof(argv[10]);
     }
-
+    
     if (argc >= 14) {
-        upx = atoi(argv[11]);
-        upy = atoi(argv[12]);
-        upz = atoi(argv[13]);
+        upx = atof(argv[11]);
+        upy = atof(argv[12]);
+        upz = atof(argv[13]);
     }
-        
+    
     if (argc >= 15) {
-        fovy = atoi(argv[14]);
+        fovy = atof(argv[14]);
     }
 
     if (!Import3DFromFile(modelname)) {
