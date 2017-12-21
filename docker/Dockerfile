@@ -39,7 +39,7 @@ RUN git clone https://github.com/jonas-arkulpa/LightweightRenderer.git
 
 WORKDIR LightweightRenderer
 
-RUN rm render && make
+RUN rm -f render && make
 
 ENV PATH /opt/LightweightRenderer:${PATH}
 
