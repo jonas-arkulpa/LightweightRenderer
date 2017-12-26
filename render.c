@@ -317,23 +317,23 @@ void apply_material(const aiMaterial *mtl)
     }
 
     set_float4(c, 0.8f, 0.8f, 0.8f, 1.0f);
-    if(AI_SUCCESS == aiGetMaterialColor(mtl, AI_MATKEY_COLOR_DIFFUSE, &diffuse))
-        color4_to_float4(&diffuse, c);
+    //if(AI_SUCCESS == aiGetMaterialColor(mtl, AI_MATKEY_COLOR_DIFFUSE, &diffuse))
+    //    color4_to_float4(&diffuse, c);
     glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, c);
 
     set_float4(c, 0.2f, 0.2f, 0.2f, 1.0f);
-    if(AI_SUCCESS == aiGetMaterialColor(mtl, AI_MATKEY_COLOR_SPECULAR, &specular))
-        color4_to_float4(&specular, c);
+    // if(AI_SUCCESS == aiGetMaterialColor(mtl, AI_MATKEY_COLOR_SPECULAR, &specular))
+    //    color4_to_float4(&specular, c);
     glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, c);
 
     set_float4(c, 0.2f, 0.2f, 0.2f, 1.0f);
-    if(AI_SUCCESS == aiGetMaterialColor(mtl, AI_MATKEY_COLOR_AMBIENT, &ambient))
-        color4_to_float4(&ambient, c);
+    // if(AI_SUCCESS == aiGetMaterialColor(mtl, AI_MATKEY_COLOR_AMBIENT, &ambient))
+    //    color4_to_float4(&ambient, c);
     glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, c);
 
     set_float4(c, 0.0f, 0.0f, 0.0f, 1.0f);
-    if(AI_SUCCESS == aiGetMaterialColor(mtl, AI_MATKEY_COLOR_EMISSIVE, &emission))
-        color4_to_float4(&emission, c);
+    //if(AI_SUCCESS == aiGetMaterialColor(mtl, AI_MATKEY_COLOR_EMISSIVE, &emission))
+    //    color4_to_float4(&emission, c);
     glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, c);
 
     max = 1;
@@ -490,7 +490,7 @@ int InitGL(int width, int height)
 
     glEnable(GL_TEXTURE_2D);
     glShadeModel(GL_SMOOTH);         // Enables Smooth Shading
-    glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
+    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
     glClearDepth(1.0f);                // Depth Buffer Setup
     glEnable(GL_DEPTH_TEST);        // Enables Depth Testing
     glDepthFunc(GL_LEQUAL);            // The Type Of Depth Test To Do
