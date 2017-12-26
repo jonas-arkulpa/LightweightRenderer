@@ -35,7 +35,7 @@ ENV LD_LIBRARY_PATH /usr/local/lib/
 
 WORKDIR /opt/
 
-RUN git clone https://github.com/jonas-arkulpa/LightweightRenderer.git
+RUN git clone -b default-colors https://github.com/jonas-arkulpa/LightweightRenderer.git
 
 WORKDIR LightweightRenderer
 
