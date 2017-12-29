@@ -367,6 +367,7 @@ void apply_material(const aiMaterial *mtl)
 
 void recursive_render(const struct aiScene * sc, const struct aiNode * nd, float scale)
 {
+    printf("recursive_render");
     unsigned int i;
     unsigned int n=0, t;
     aiMatrix4x4 m = nd->mTransformation;
@@ -479,6 +480,7 @@ int InitGL(int width, int height)
     {
         return false;
     }
+    printf("InitGL");
 
     glViewport(0, 0, width, height);                    // Reset The Current Viewport
 
@@ -494,7 +496,7 @@ int InitGL(int width, int height)
     glMatrixMode(GL_MODELVIEW);                        // Select The Modelview Matrix
     glLoadIdentity();       
 
-    glEnable(GL_TEXTURE_2D);
+    //glEnable(GL_TEXTURE_2D);
     glShadeModel(GL_SMOOTH);         // Enables Smooth Shading
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
     glClearDepth(1.0f);                // Depth Buffer Setup
