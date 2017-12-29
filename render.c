@@ -434,7 +434,6 @@ void recursive_render(const struct aiScene * sc, const struct aiNode * nd, float
             for(i = 0; i < face->mNumIndices; i++)        // go through all vertices in face
             {
                 int vertexIndex = face->mIndices[i];    // get group index for current index
-                glColor3f(0.8, 0.8, 0.8);
                 //if(mesh->mColors[0] != NULL)
                 //    Color4f(&mesh->mColors[0][vertexIndex]);
                 if(mesh->mNormals != NULL) 
@@ -444,6 +443,7 @@ void recursive_render(const struct aiScene * sc, const struct aiNode * nd, float
                     }
                 
                 glNormal3fv(&res[0]);
+                glColor3fv(&res[0])
                 //glColor3f(0.8, 0.8, 0.8);
                 glVertex3fv(&mesh->mVertices[vertexIndex].x);
             }
