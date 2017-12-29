@@ -380,7 +380,7 @@ void recursive_render(const struct aiScene * sc, const struct aiNode * nd, float
     glPushMatrix();
     glMultMatrixf((float*)&m);
     
-    glDisable(GL_COLOR_MATERIAL);
+    glEnable(GL_COLOR_MATERIAL);
     //glColor4f(0.8f, 0.8f, 0.8f, 1.0f);
 
     // draw all meshes assigned to this node
@@ -443,7 +443,7 @@ void recursive_render(const struct aiScene * sc, const struct aiNode * nd, float
                     }
                 
                 glNormal3fv(&res[0]);            
-                // glColor3fv(&res[0]);            
+                glColor3fv(&res[0]);
                 glVertex3fv(&mesh->mVertices[vertexIndex].x);
             }
             glEnd();
