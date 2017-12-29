@@ -1,5 +1,7 @@
 FROM ubuntu:14.04
 
+ARG VER=unknown
+
 WORKDIR /opt/
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -35,7 +37,7 @@ ENV LD_LIBRARY_PATH /usr/local/lib/
 
 WORKDIR /opt/
 
-RUN git clone -b feature/default-colors https://github.com/jonas-arkulpa/LightweightRenderer.git
+RUN VER=${VER} git clone -b feature/default-colors https://github.com/jonas-arkulpa/LightweightRenderer.git
 
 WORKDIR LightweightRenderer
 

@@ -385,7 +385,7 @@ void recursive_render(const struct aiScene * sc, const struct aiNode * nd, float
     {
         const struct aiMesh* mesh = scene->mMeshes[nd->mMeshes[n]];
 
-        apply_material(sc->mMaterials[mesh->mMaterialIndex]); 
+        //apply_material(sc->mMaterials[mesh->mMaterialIndex]); 
 
         if(mesh->mNormals == NULL)
         {
