@@ -398,6 +398,8 @@ void recursive_render(const struct aiScene * sc, const struct aiNode * nd, float
         {
             glEnable(GL_LIGHTING);            
         }
+        
+        printf(mesh->mColors[0] != NULL ? "true" : "false");
 
         //if(mesh->mColors[0] != NULL)
         //{
@@ -439,9 +441,10 @@ void recursive_render(const struct aiScene * sc, const struct aiNode * nd, float
                 if(mesh->mNormals != NULL) 
                     if(mesh->HasTextureCoords(0))        //HasTextureCoords(texture_coordinates_set)
                     {
-                        glTexCoord2f(mesh->mTextureCoords[0][vertexIndex].x, 1 - mesh->mTextureCoords[0][vertexIndex].y); //mTextureCoords[channel][vertex]
+                        printf("hasTextureCoords");
+                        // glTexCoord2f(mesh->mTextureCoords[0][vertexIndex].x, 1 - mesh->mTextureCoords[0][vertexIndex].y); //mTextureCoords[channel][vertex]
                     }
-
+                
                 glNormal3fv(&res[0]);            
                 // glColor3fv(&res[0]);            
                 glVertex3fv(&mesh->mVertices[vertexIndex].x);
