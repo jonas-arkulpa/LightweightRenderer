@@ -385,7 +385,7 @@ void recursive_render(const struct aiScene * sc, const struct aiNode * nd, float
     {
         const struct aiMesh* mesh = scene->mMeshes[nd->mMeshes[n]];
 
-        //apply_material(sc->mMaterials[mesh->mMaterialIndex]); 
+        //apply_material(sc->mMaterials[mesh->mMaterialIndex]);
 
         if(mesh->mNormals == NULL)
         {
@@ -396,14 +396,14 @@ void recursive_render(const struct aiScene * sc, const struct aiNode * nd, float
             glEnable(GL_LIGHTING);            
         }
 
-        if(mesh->mColors[0] != NULL)
-        {
-            glEnable(GL_COLOR_MATERIAL);
-        }
-        else
-        {
-            glDisable(GL_COLOR_MATERIAL);
-        }
+        //if(mesh->mColors[0] != NULL)
+        //{
+        //    glEnable(GL_COLOR_MATERIAL);
+        //}
+        //else
+        //{
+        //    glDisable(GL_COLOR_MATERIAL);
+        //}
 
         for (t = 0; t < mesh->mNumFaces; ++t) {
             const struct aiFace* face = &mesh->mFaces[t];
@@ -431,8 +431,8 @@ void recursive_render(const struct aiScene * sc, const struct aiNode * nd, float
             for(i = 0; i < face->mNumIndices; i++)        // go through all vertices in face
             {
                 int vertexIndex = face->mIndices[i];    // get group index for current index
-                if(mesh->mColors[0] != NULL)
-                    Color4f(&mesh->mColors[0][vertexIndex]);
+                //if(mesh->mColors[0] != NULL)
+                //    Color4f(&mesh->mColors[0][vertexIndex]);
                 if(mesh->mNormals != NULL) 
                     if(mesh->HasTextureCoords(0))        //HasTextureCoords(texture_coordinates_set)
                     {
