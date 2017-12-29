@@ -149,6 +149,7 @@ bool Import3DFromFile( const char * pFile)
 
 int LoadGLTextures(const aiScene * scene)
 {
+    return true;
     ILboolean success;
 
     /* Before calling ilInit() version should be checked. */
@@ -367,7 +368,6 @@ void apply_material(const aiMaterial *mtl)
 
 void recursive_render(const struct aiScene * sc, const struct aiNode * nd, float scale)
 {
-    printf("recursive_render");
     unsigned int i;
     unsigned int n=0, t;
     aiMatrix4x4 m = nd->mTransformation;
@@ -399,8 +399,6 @@ void recursive_render(const struct aiScene * sc, const struct aiNode * nd, float
         {
             glEnable(GL_LIGHTING);            
         }
-        
-        printf(mesh->mColors[0] != NULL ? "true" : "false");
 
         //if(mesh->mColors[0] != NULL)
         //{
@@ -442,7 +440,6 @@ void recursive_render(const struct aiScene * sc, const struct aiNode * nd, float
                 if(mesh->mNormals != NULL) 
                     if(mesh->HasTextureCoords(0))        //HasTextureCoords(texture_coordinates_set)
                     {
-                        printf("hasTextureCoords");
                         // glTexCoord2f(mesh->mTextureCoords[0][vertexIndex].x, 1 - mesh->mTextureCoords[0][vertexIndex].y); //mTextureCoords[channel][vertex]
                     }
                 
@@ -480,7 +477,6 @@ int InitGL(int width, int height)
     {
         return false;
     }
-    printf("InitGL");
 
     glViewport(0, 0, width, height);                    // Reset The Current Viewport
 
