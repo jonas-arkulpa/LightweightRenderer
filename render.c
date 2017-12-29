@@ -443,7 +443,10 @@ void recursive_render(const struct aiScene * sc, const struct aiNode * nd, float
                     }
                 
                 glNormal3fv(&res[0]);            
-                glColor3fv(&res[0]);
+                //glColor3fv(&res[0]);
+                float c[4];
+                set_float4(c, 0.8f, 0.8f, 0.8f, 1.0f);
+                glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, c);
                 glVertex3fv(&mesh->mVertices[vertexIndex].x);
             }
             glEnd();
