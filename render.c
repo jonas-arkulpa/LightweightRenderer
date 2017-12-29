@@ -379,6 +379,9 @@ void recursive_render(const struct aiScene * sc, const struct aiNode * nd, float
     m.Transpose();
     glPushMatrix();
     glMultMatrixf((float*)&m);
+    
+    glEnable(GL_COLOR_MATERIAL);
+    glColor4f(0.8f, 0.8f, 0.8f, 1.0f);
 
     // draw all meshes assigned to this node
     for (; n < nd->mNumMeshes; ++n)
