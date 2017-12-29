@@ -149,7 +149,6 @@ bool Import3DFromFile( const char * pFile)
 
 int LoadGLTextures(const aiScene * scene)
 {
-    return true;
     ILboolean success;
 
     /* Before calling ilInit() version should be checked. */
@@ -381,8 +380,8 @@ void recursive_render(const struct aiScene * sc, const struct aiNode * nd, float
     glPushMatrix();
     glMultMatrixf((float*)&m);
     
-    //glEnable(GL_COLOR_MATERIAL);
-    glColor4f(0.8f, 0.8f, 0.8f, 1.0f);
+    glDisable(GL_COLOR_MATERIAL);
+    //glColor4f(0.8f, 0.8f, 0.8f, 1.0f);
 
     // draw all meshes assigned to this node
     for (; n < nd->mNumMeshes; ++n)
@@ -473,10 +472,10 @@ float camDist = 4.0f;
 // All Setup For OpenGL goes here
 int InitGL(int width, int height)
 {
-    if (!LoadGLTextures(scene))
-    {
-        return false;
-    }
+    //if (!LoadGLTextures(scene))
+    //{
+    //    return false;
+    //}
 
     glViewport(0, 0, width, height);                    // Reset The Current Viewport
 
